@@ -6,7 +6,7 @@ const updateField = function (el, counter = false) {
   let val = counter
     ? parseInt(sessionStorage.getItem(counterKey)) || 0
     : localStorage.getItem(txtkey) || "Local storage empty!";
-  display.textContent = counter ? toTimeString(val) : val;
+  display.innerText = counter ? toTimeString(val) : val;
 };
 
 const toTimeString = function (seconds) {
