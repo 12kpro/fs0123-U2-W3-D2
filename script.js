@@ -3,10 +3,14 @@ const counterKey = "counter";
 //https://developer.mozilla.org/en-US/docs/Web/API/Storage/getItem?retiredLocale=it
 //A string containing the value of the key. If the key does not exist, null is returned
 
-const updateField = function (el, session = false) {
+const updateField = function (el, counter = false) {
   let display = document.querySelector(el);
-  let val = session ? sessionStorage.getItem(counterKey) || 0 : localStorage.getItem(txtkey) || "Local storage empty!";
-  display.textContent = val;
+  let val = counter ? sessionStorage.getItem(counterKey) || 0 : localStorage.getItem(txtkey) || "Local storage empty!";
+  display.textContent = counter ? toTimeString(val) : val;
+};
+
+const toTimeString = function (seconds) {
+  return new Date(seconds * 1000).toISOString().slice(11, 19);
 };
 
 document.addEventListener("DOMContentLoaded", () => {
