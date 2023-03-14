@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .counter {
+        text-align: center;
+        width: 210px;
+        margin-top: 50px;
+      }
+      .counter .counter-content {
+        color: #fff;
+        background-color: #0097e6;
+        padding: 15px 20px 35px;
+        position: relative;
+        z-index: 1;
+        clip-path: polygon(0 0, 100% 0, 100% 50%, 50% 100%, 0 50%);
+      }
+      .counter .counter-content:before {
+        content: "";
+        background-color: #111;
+        position: absolute;
+        left: 10px;
+        right: 10px;
+        bottom: 10px;
+        top: 0;
+        z-index: -1;
+        clip-path: inherit;
+      }
+      .counter h3 {
+        font-size: 17px;
+        font-weight: 400;
+        letter-spacing: 0.5px;
+        text-transform: capitalize;
+        margin: 0 0 10px;
+      }
+      .counter .counter-value {
+        font-size: 30px;
+        line-height: 30px;
+        font-weight: 600;
+      }
+    </style>
+  </head>
+  <body>
+    <form>
+      <p id="display"></p>
+      <input id="text" type="text" placeholder="Scrivi qualcosa" required />
+      <button id="save" type="button">Save</button>
+      <button id="delete" type="button">Delete</button>
+    </form>
+    <div class="counter">
+      <div class="counter-content">
+        <h3>Web Development</h3>
+        <span id="counterDisplay" class="counter-value">0</span>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
